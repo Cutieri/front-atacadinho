@@ -1,44 +1,83 @@
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+/* FormUser.css */
 
-  input[type=email], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+form {
+  background-color: rgba(15, 15, 15, 0.85);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+  animation: glow 1.5s infinite alternate;
+}
 
-  input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+@keyframes glow {
+  from {
+      box-shadow: 0 0 10px blueviolet, 0 0 20px blueviolet, 0 0 30px blueviolet, 0 0 40px blueviolet, 0 0 50px blueviolet;
   }
-  
-  input[type=button] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 12px;
-    margin: 4px 0;
-    border: none;
-    border-radius: 4px;
-    margin-left: 25px;
+  to {
+      box-shadow: 0 0 20px blueviolet, 0 0 30px blueviolet, 0 0 40px blueviolet, 0 0 50px blueviolet, 0 0 60px blueviolet;
   }
-  
-  form {
-    border-radius: 5px;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
+}
 
-  h2{
-    text-align: center;
-  }
+h2 {
+  text-align: center;
+  color: blueviolet;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px blueviolet;
+}
+
+input[type=text], 
+input[type=email], 
+input[type=password], 
+input[type=cpf_cnpj], 
+select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  background-color: transparent;
+  border: 2px solid blueviolet;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+}
+
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=password]:focus, 
+input[type=cpf_cnpj]:focus {
+  border-color: blueviolet;
+  box-shadow: 0 0 10px blueviolet, 0 0 20px blueviolet;
+}
+
+input[type=button] {
+  background-color: blueviolet;
+  color: #0f0f0f;
+  padding: 10px 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100%; /* Deixa o botão com a largura completa do formulário */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px blueviolet;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura total */
+}
+
+
+input[type=button]:hover {
+  background-color: blueviolet;
+  color: #ffffff;
+  box-shadow: 0 0 10px blueviolet, 0 0 20px blueviolet;
+}
+
+label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -4,26 +4,23 @@ import './FormUser.css'
 function FormUser(){
     const [name, setNome] = useState('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [cpf_cnpj, setCpfCnpj] = useState('')
+    const [senha, setPassword] = useState('')
 
     async function cadastroUser(){
         
-        if(name=== "" || email==="" || password === "" || cpf_cnpj === ""){
+        if(name=== "" || email==="" || senha === ""){
             alert("Preencha todos os campos")
             return
         }
         
         // integrar com a vossa API
 
-        let api = await fetch("http://localhost:8081/user/save",{
+        let api = await fetch("http://localhost:8090/usuario/cadastrar",{
             method:"POST",
             body:JSON.stringify({
                 "name":name,
                 "email":email,
-                "password": password,
-                "cpf_cnpj":cpf_cnpj,
-                "is_active":1
+                "senha": senha
             }),
             headers:{
                 'Content-Type':'application/json'
@@ -33,6 +30,7 @@ function FormUser(){
         let resposta = await api.json()
         if(api.ok){
             alert("Cadastro done")
+            window.location.href = ("http://localhost:3000/compra")
             return
         }
 
@@ -42,6 +40,7 @@ function FormUser(){
 
     return(
         <div>
+            <body>
             <form>
                 <h2>Cadastra-se</h2>
                 <label htmlFor='name'>Nome:</label>
@@ -67,17 +66,10 @@ function FormUser(){
                 name='senha'
                 onChange={(e) => setPassword(e.target.value)}
                 /><br/>
-
-                <label htmlFor='name'>CPF / CNPJ:</label>
-                <input 
-                type='text' 
-                id='cpf_cnpj' 
-                name='cpf_cnpj'
-                onChange={(e) => setCpfCnpj(e.target.value)}
-                /><br/>
                         
                 <input type='button' value="Cadastra-se" onClick={cadastroUser}/>
             </form>
+            </body>
         </div>
     )
 }
