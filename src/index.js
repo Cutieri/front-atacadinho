@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FormUser from './components/FormUser';
 import Carrinho from './components/carrinho';
-import Compra from './components/compra';
+import Adicionar from './components/adicionar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +16,7 @@ root.render(
         <Route path='/' element={<App/>}></Route>
         <Route path='/create-user' element={<FormUser/>}></Route>
         <Route path='/carrinho' element={<Carrinho/>}></Route>
-        <Route path='/compra' element={<Compra/>}></Route>
+        <Route path='/compra' element={<Adicionar/>}></Route>
       </Routes>
     </BrowserRouter>
     
